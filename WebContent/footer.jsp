@@ -1,3 +1,6 @@
+<%@page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 
 <html lang="ko">
@@ -75,7 +78,7 @@
                     <div class="footer__copyright__text">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <p>
-                            Copyright ©
+                            Copyright Â©
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
