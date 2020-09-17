@@ -24,12 +24,14 @@
 </head>
 
 <body>
+<!--  header  -->
+<%@include file="header.jsp" %>
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
-<%@include file="header.jsp" %>
 
     <!-- Hero Section Begin -->
     <section class="hero">

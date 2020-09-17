@@ -26,6 +26,9 @@
 
 <body>
     <!-- Offcanvas Menu Begin -->
+<%request.setCharacterEncoding("UTF-8");
+	response.setCharacterEncoding("UTF-8");%>
+
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
@@ -88,7 +91,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt="" /></a>
+                        <a href="index.jsp"><img src="img/logo.png" alt="상단 헤더 로고" /></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
