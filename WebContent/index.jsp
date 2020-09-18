@@ -14,7 +14,8 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel ="stylesheet"/>
+   <!-- <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />-->
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
@@ -32,31 +33,33 @@
         <div class="loader"></div>
     </div>
 
-
+<%request.setCharacterEncoding("UTF-8");
+	response.setCharacterEncoding("UTF-8");%>
+	
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
+            <div class="hero__items set-bg" data-setbg="img/banner.11.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
                             <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                <h6>TWICE is Back!!</h6>
+                                <h2>TWICE all Product Sale 20%</h2>
+                                <p>영원한 트와이스, 트와이스 관련 상품 10~20% 세일</p>
+                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"><i class="fas fa-angle-left"></i></span></a>
                                 <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fab-facebook"></i></a>
+                                    <a href="#"><i class="fa fab-twitter"></i></a>
+                                    <a href="#"><i class="fa fab-pinterest"></i></a>
+                                    <a href="#"><i class="fa fab-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="img/hero/hero-2.jpg">
+            <div class="hero__items set-bg" data-setbg="img/">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
@@ -64,7 +67,7 @@
                                 <h6>Summer Collection</h6>
                                 <h2>Fall - Winter Collections 2030</h2>
                                 <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"><i class="fas fa-angle-right"></i></span></a>
                                 <div class="hero__social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>

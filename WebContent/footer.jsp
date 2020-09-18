@@ -17,7 +17,9 @@
 
 <!-- Css Styles -->
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
 <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
 <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
 <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
@@ -39,6 +41,10 @@
 						</div>
 
 						<p>NO MUSIC, NO LIFE</p>
+						<p>
+							<i class="fas fab-facebook-square"></i> <i class="fas fab-line"></i>
+							<i class="fas fab-instagram-square"></i> <i	class="fas fab-facebook-square"></i>
+						</p>
 					</div>
 				</div>
 				<div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
@@ -119,8 +125,7 @@
 							<li><a href="#">Online Shop</a></li>
 							<li><a href="#">Tracking</a></li>
 							<li><a href="#">Order Check</a></li>
-							<li><a href="#">Cancel</a></li>
-							<li><a href="#">Return</a></li>
+							<li><a href="#">Cancel/Return</a></li>
 							<li><a href="#">Notice</a></li>
 							<li><a href="#">Event</a></li>
 						</ul>
@@ -152,7 +157,7 @@
 						<ul>
 							<li><a href="#">Informations</a></li>
 							<li><a href="#">Recruitment</a></li>
-							
+
 						</ul>
 					</div>
 				</div>
