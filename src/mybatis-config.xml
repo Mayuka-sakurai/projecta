@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
 				<property name="url"
-					value="jdbc:mysql://localhost:3306/especial?characterEncoding=UTF8&amp;serverTimezone=UTC" />
+					value="jdbc:mysql://localhost:3306/oreno?characterEncoding=UTF8&amp;serverTimezone=UTC" />
 				<property name="username" value="root" />
 				<property name="password" value="dolly00" />
 			</dataSource>
@@ -24,9 +24,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 
 	<mappers>
-		<mapper resource="com/especial/Mapper/member.xml" />
-		<mapper resource="com/especial/Mapper/review.xml" />
-		<mapper resource="com/especial/Mapper/notice.xml" />
+		<mapper resource="com/oreno/Mapper/member.xml" />
+		
 
 	</mappers>
 

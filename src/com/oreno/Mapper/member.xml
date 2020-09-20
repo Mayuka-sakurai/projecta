@@ -13,28 +13,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="member">
 	<!-- 로그인 확인시 사용하는 쿼리문 -->
 	<select id="logincheck" parameterType="String"
-		resultType="com.especial.MemberDTO.Member_dto">
-		select member_id, member_password from especial.member
-		where member_id = #{id}
+		resultType="com.oreno.VO.UserBean">
+		select userid, password from oreno.member
+		where userid = #{inputid}
 	</select>
-
 	<!-- 회원가입시 사용하는 쿼리문 -->
-	<insert id="joinmember" parameterType="String">
-		INSERT INTO
-		especial.member values(null, #{gender}, #{name}, #{eng_name},
-		#{birth}, #{email}, #{tel}, #{zipcode}, #{address}, #{member_id},
-		#{member_password}, #{joindate});
+	<insert id="signup" parameterType="com.oreno.VO.UserBean">
+	
 	</insert>
-
-	<!-- 회원 정보수정시 사용하는 쿼리문 -->
-	<update id="update" parameterType="String">
-		update especial.member set
-		number = #{number}, birth = #{birth} where name = #{name}
+	<!-- 회원 정보 수정시 사용하는 쿼리문 -->
+	<update id="modifyUserInfo">
+	
 	</update>
-
+	
 	<!-- 회원 탈퇴시 사용하는 쿼리문 -->
-	<delete id="delete" parameterType="String">
-		delete from especial.member
-		where id = #{id}
+	<delete id="deleteUser">
+	
 	</delete>
 </mapper>

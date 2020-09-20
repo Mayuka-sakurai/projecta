@@ -5,7 +5,7 @@ import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.oreno.SVC.BoardListService;
+import com.oreno.SVC.member_LoginService;
 import com.oreno.VO.ActionForward;
 import com.oreno.VO.review_BoardBean;
 import com.oreno.VO.PageInfo;
@@ -32,7 +32,7 @@ public class review_BoardListAction implements Action {
 		}
 
 
-		BoardListService boardListService = new BoardListService();
+		member_LoginService boardListService = new member_LoginService();
 		int listCount = boardListService.getListCount();
 		System.out.println(listCount);
 		articleList = boardListService.getArticleList(page, limit);
