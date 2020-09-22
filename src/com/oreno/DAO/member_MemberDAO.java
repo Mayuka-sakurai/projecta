@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.oreno.VO.member_UserBean;
+import com.oreno.VO.UserBean;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -47,9 +47,9 @@ public class member_MemberDAO {
 
 
 
-	public List<member_UserBean> getLoginInfo(String inputid) {
+	public List<UserBean> getLoginInfo(String inputid) {
 		SqlSession session = sqlfactory.openSession();
-		List<member_UserBean> userInfo = new ArrayList<member_UserBean>();
+		List<UserBean> userInfo = new ArrayList<UserBean>();
 
 
 		try {

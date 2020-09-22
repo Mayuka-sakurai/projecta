@@ -1,12 +1,12 @@
 package com.oreno.VO;
 
-public class member_UserBean {
-	String userid;
-	String password;
-	String name;
-	String address_main;
-	String address_detail;
-	String tel;
+public class UserBean {
+	private String userid;
+	private String password;
+	private String name;
+	private String address_main;
+	private String address_detail;
+	private String tel;
 	
 	public String getUserid() {
 		return userid;

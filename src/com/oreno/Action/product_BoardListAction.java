@@ -7,20 +7,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreno.SVC.member_LoginService;
 import com.oreno.VO.ActionForward;
-import com.oreno.VO.review_BoardBean;
+import com.oreno.VO.product_BoardBean;
 import com.oreno.VO.PageInfo;
 import com.oreno.VO.ReviewCount;
 
 
 
-public class review_BoardListAction implements Action {
+public class product_BoardListAction implements Action {
 
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 
-		List<review_BoardBean> articleList = new ArrayList<review_BoardBean>();
+		List<product_BoardBean> articleList = new ArrayList<product_BoardBean>();
 
 		int page = 1;
 		int limit = 10;

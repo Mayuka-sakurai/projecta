@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.oreno.SVC.member_LoginService;
 import com.oreno.VO.ActionForward;
-import com.oreno.VO.member_UserBean;
+import com.oreno.VO.UserBean;
 
 public class member_LoginAction implements Action {
 	
@@ -21,14 +21,14 @@ public class member_LoginAction implements Action {
 		response.setCharacterEncoding("UTF-&");
 		ActionForward forward = null;
 		HttpSession session = request.getSession();
-		List<member_UserBean> userbean = new ArrayList<member_UserBean>();
+		List<UserBean> userbean = new ArrayList<UserBean>();
 		String inputid = request.getParameter("inputid");
 		String inputpw = request.getParameter("password");
 		
 		
 		member_LoginService loginService = new member_LoginService();
 		
-		List<member_UserBean> dbdata = loginService.getUsreInfo(inputid);
+		List<UserBean> dbdata = loginService.getUsreInfo(inputid);
 		
 		if(dbdata.get(1).getUserid().equals(inputid)) {
 			
