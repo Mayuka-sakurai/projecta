@@ -1,18 +1,26 @@
 package com.oreno.SVC;
 
-import com.especial.BoardDAO.REVIEW_BoardDAO;
-import com.especial.VO.BoardBean;
-
-
+import com.oreno.DAO.product_productDAO;
+import com.oreno.VO.ProductBean;
 
 public class product_ProductRegistProService {
 
-	public boolean registArticle(BoardBean boardBean) throws Exception{
+	// 신규 상품 등록
+	public boolean registProduct(ProductBean productBean) throws Exception{
 		
 		boolean isWriteSuccess = false;
 	
-		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
-		boardDAO = new REVIEW_BoardDAO();
+		product_productDAO productDAO = productDAO.getinstance();
+		
+		productDAO = new product_productDAO();
+		
+		
+
+		int registCount = productDAO.registProduct(productBean);
+		
+		
+		
+	
 		int room_review_no = 0;
 		
 		room_review_no = boardDAO.articleNumber();

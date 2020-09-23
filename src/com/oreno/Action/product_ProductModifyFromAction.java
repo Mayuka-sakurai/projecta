@@ -11,7 +11,7 @@ import com.oreno.SVC.product_ProductDetailService;
 import com.oreno.VO.ActionForward;
 import com.oreno.VO.product_BoardBean;
 
-public class product_BoardModifyFromAction implements Action {
+public class product_ProductModifyFromAction implements Action {
 
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		System.out.println("ModifyFromAction µµÂø");

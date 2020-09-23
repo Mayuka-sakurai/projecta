@@ -16,24 +16,24 @@ import com.oreno.VO.ProductBean;
 
 
 
-public class product_BoardDAO {
+public class product_productDAO {
 
 	Connection con;
 	SqlSessionFactory sqlfactory;
 
-	private static product_BoardDAO instance;
+	private static product_productDAO instance;
 
-	public static product_BoardDAO getinstance() {
+	public product_productDAO getinstance() {
 		if(instance == null) {
-			synchronized (product_BoardDAO.class) {
-				instance = new product_BoardDAO();
+			synchronized (product_productDAO.class) {
+				instance = new product_productDAO();
 			}
 		}
 		return instance;
 	}
 
 
-	public product_BoardDAO() {
+	public product_productDAO() {
 		try {
 			Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
 			sqlfactory = new SqlSessionFactoryBuilder().build(reader);
@@ -47,7 +47,7 @@ public class product_BoardDAO {
 
 	// 신규 상품 등록코드 부여중 카테고리 maxCount 
 
-	public int getProductCode(String p_category) {
+	public int getCategoryCode(String p_category) {
 	
 	int categoryMax = 0;
 		
@@ -58,10 +58,11 @@ public class product_BoardDAO {
 		// 통일 카테고리로 등록 된 최대 상품 코드 +1  => 신규 카테고리 번호
 		categoryMax = session.selectOne("카테고리max", p_category);
 		
-		if(categoryMax == 0) {
-			categoryMax = 1;
+		if(categoryMax > 0) {
+			categoryMax = categoryMax + 1;
+			
 		}else {
-			categoryMax = categoryMax+1;
+			categoryMax = 1;
 			
 		}
 

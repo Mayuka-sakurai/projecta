@@ -13,7 +13,7 @@ import com.oreno.VO.ReviewCount;
 
 
 
-public class product_BoardListAction implements Action {
+public class product_ProductListAction implements Action {
 
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 

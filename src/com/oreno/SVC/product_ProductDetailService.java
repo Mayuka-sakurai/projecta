@@ -2,7 +2,7 @@ package com.oreno.SVC;
 
 import java.util.List;
 
-import com.oreno.DAO.product_BoardDAO;
+import com.oreno.DAO.product_productDAO;
 import com.oreno.VO.ProductBean;
 
 
@@ -13,7 +13,7 @@ public class product_ProductDetailService {
 	public List<ProductBean> getArticle(String product_code) throws Exception{
 
 		List<ProductBean> detailList = null;
-		product_BoardDAO productDAO = product_BoardDAO.getinstance();
+		product_productDAO productDAO = product_productDAO.getinstance();
 		
 		int categoryMax = productDAO.getProductCode(product_category);
 

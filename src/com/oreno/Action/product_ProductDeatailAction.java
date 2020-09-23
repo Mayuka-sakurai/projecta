@@ -12,7 +12,7 @@ import com.oreno.VO.product_BoardBean;
 
 
 
-public class product_BoardDeatailAction implements Action {
+public class product_ProductDeatailAction implements Action {
 
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{ 
 		request.setCharacterEncoding("UTF-8");

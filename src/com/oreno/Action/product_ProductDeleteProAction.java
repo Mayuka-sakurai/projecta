@@ -13,7 +13,7 @@ import com.oreno.VO.product_BoardBean;
 
 
 
-public class product_DeleteProAction implements Action {
+public class product_ProductDeleteProAction implements Action {
 
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) 
 			throws Exception{	 

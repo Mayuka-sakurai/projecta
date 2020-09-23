@@ -13,7 +13,7 @@ import com.especial.VO.ActionForward;
 import com.especial.VO.BoardBean;
 
 
-public class product_BoardModifyProAction implements Action {
+public class product_ProductModifyProAction implements Action {
 
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		System.out.println("modifyµµÂøÇÔ!!!!!!!!!!!!!!!!!!!!!!!!!!");

@@ -9,14 +9,13 @@ import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-
 import com.oreno.SVC.product_ProductRegistProService;
 import com.oreno.VO.ActionForward;
-import com.oreno.VO.product_BoardBean;
-import com.oreno.BoardDAO.REVIEW_BoardDAO;
+import com.oreno.VO.ProductBean;
 
 
-public class product_BoardWriteProAction implements Action {
+
+public class product_ProductRegistAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
@@ -25,9 +24,9 @@ public class product_BoardWriteProAction implements Action {
 		response.setCharacterEncoding("UTF-8");
 		
 		ActionForward forward = null;
-		product_BoardBean boardBean = null;
+		ProductBean productBean = null;
 		String realFolder = "";
-		String saveFolder = "/reviewphoto";
+		String saveFolder = "/product_img";
 		int fileSize = 5*1024*1024;
 		ServletContext context = request.getServletContext();
 		realFolder = context.getRealPath(saveFolder);
@@ -36,18 +35,19 @@ public class product_BoardWriteProAction implements Action {
 		//jsp 세션과 http세션은 다르기때문에, httpsession의 객체를 선언한 이후, 이 세션으로 사용이 가능하다.
 		HttpSession session = request.getSession();
 
-		
-		boardBean = new product_BoardBean();
-		boardBean.setRoom_review_category(multi.getParameter("category"));
-		boardBean.setRoom_review_title(multi.getParameter("texttitle"));
-		boardBean.setRoom_review_contents(multi.getParameter("content"));
-		
-		// 세션에 등록되어진 값을 가져오는 경우 > 일반 session.get으로 받아오면 된다. 폼에서 진행되는 경우 multi로 받았음!
-		boardBean.setMember_id((String)session.getAttribute("id"));
-		boardBean.setMember_password((String)session.getAttribute("pw"));
-		boardBean.setRoom_review_file(multi.getOriginalFileName((String)multi.getFileNames().nextElement()));
-	
+		productBean = new ProductBean();
+//		productBean.setProduct_code(product_code);
+		productBean.setProduct_title(multi.getParameter("title"));
+		productBean.setProduct_artist(multi.getParameter("artist"));
+		productBean.setProduct_category(multi.getParameter("category"));
+		productBean.setProduct_year(multi.getParameter("year"));
+		productBean.setProduct_barcode(multi.getParameter("barcode"));
+		productBean.setProduct_image(multi.getOriginalFileName((String)multi.getFileNames().nextElement()));
+		productBean.setProduct_country(multi.getParameter("country"));
+			
 		product_ProductRegistProService boardWriteProService = new product_ProductRegistProService();
+		
+		
 		boolean isWriteSuccess = boardWriteProService.registArticle(boardBean);
 		System.out.println(isWriteSuccess);
 
