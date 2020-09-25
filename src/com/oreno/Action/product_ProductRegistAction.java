@@ -47,8 +47,8 @@ public class product_ProductRegistAction implements Action {
 			
 		product_ProductRegistProService boardWriteProService = new product_ProductRegistProService();
 		
-		
-		boolean isWriteSuccess = boardWriteProService.registArticle(boardBean);
+		boolean isRegistSuccess = product_ProductRegistProService(productBean)
+		boolean isWriteSuccess = boardWriteProService.registArticle(productBean);
 		System.out.println(isWriteSuccess);
 
 		
