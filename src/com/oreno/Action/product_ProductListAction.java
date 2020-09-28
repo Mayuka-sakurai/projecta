@@ -1,16 +1,15 @@
 package com.oreno.Action;
 
-import java.io.PrintWriter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.oreno.SVC.member_LoginService;
+import com.oreno.SVC.product_ProductListService;
 import com.oreno.VO.ActionForward;
-import com.oreno.VO.product_BoardBean;
 import com.oreno.VO.PageInfo;
-import com.oreno.VO.ReviewCount;
-
+import com.oreno.VO.ProductBean;
 
 
 public class product_ProductListAction implements Action {
@@ -20,7 +19,7 @@ public class product_ProductListAction implements Action {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 
-		List<product_BoardBean> articleList = new ArrayList<product_BoardBean>();
+		List<ProductBean> productList = new ArrayList<ProductBean>();
 
 		int page = 1;
 		int limit = 10;
@@ -31,34 +30,12 @@ public class product_ProductListAction implements Action {
 			page = Integer.parseInt(request.getParameter("page"));
 		}
 
-
-		member_LoginService boardListService = new member_LoginService();
-		int listCount = boardListService.getListCount();
-		System.out.println(listCount);
-		articleList = boardListService.getArticleList(page, limit);
-
-		System.out.println("articleList"+  articleList);
-		int hotelCount = boardListService.getHotelArticleCount();
-		int facilityCount = boardListService.getFacilityArticleCount();
-		int hallCount = boardListService.getHallArticleCount();
-
-
-		ReviewCount count = new ReviewCount();
-		count.setHotel(hotelCount);
-		count.setFacility(facilityCount);
-		//		count.setOffer(offer);
-		count.setWedding_Conference(hallCount);
-
-
-
-		System.out.println("hotelCount" + hotelCount);
-		System.out.println("facilityCount" + facilityCount);
-		System.out.println("hallCount" + hallCount);
-
-
-
-
-
+		product_ProductListService listSerivce = new product_ProductListService();
+		
+		int listCount = listSerivce.getListCount();
+		
+		productList = listSerivce.getList(page, limit);
+		
 		//총 페이지 수.
 		int maxPage = (int)((double)listCount / limit + 0.95); //0.95를 더해서 올림 처리.
 
@@ -80,12 +57,12 @@ public class product_ProductListAction implements Action {
 
 
 
-		request.setAttribute("listcount", count);
+		
 		request.setAttribute("pageInfo", pageInfo); 
-		request.setAttribute("articleList", articleList);
+		request.setAttribute("productlist", productList);
 
 		System.out.println("pageinfo" + pageInfo);
-		System.out.println(articleList);
+		System.out.println(productList);
 
 
 		//		response.setContentType("text/html; charset=UTF-8");

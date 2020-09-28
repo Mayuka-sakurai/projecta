@@ -24,7 +24,6 @@ public class product_ProductRegistAction implements Action {
 		response.setCharacterEncoding("UTF-8");
 		
 		ActionForward forward = null;
-		ProductBean productBean = null;
 		String realFolder = "";
 		String saveFolder = "/product_img";
 		int fileSize = 5*1024*1024;
@@ -32,26 +31,27 @@ public class product_ProductRegistAction implements Action {
 		realFolder = context.getRealPath(saveFolder);
 		MultipartRequest multi = new MultipartRequest(request, realFolder, fileSize, "UTF-8", new DefaultFileRenamePolicy());
 		
-		//jsp 세션과 http세션은 다르기때문에, httpsession의 객체를 선언한 이후, 이 세션으로 사용이 가능하다.
-		HttpSession session = request.getSession();
-
-		productBean = new ProductBean();
+		ProductBean productBean = new ProductBean();
 //		productBean.setProduct_code(product_code);
 		productBean.setProduct_title(multi.getParameter("title"));
 		productBean.setProduct_artist(multi.getParameter("artist"));
+		//등록시 value 값은 2자리로 설정되어있음
 		productBean.setProduct_category(multi.getParameter("category"));
 		productBean.setProduct_year(multi.getParameter("year"));
 		productBean.setProduct_barcode(multi.getParameter("barcode"));
 		productBean.setProduct_image(multi.getOriginalFileName((String)multi.getFileNames().nextElement()));
 		productBean.setProduct_country(multi.getParameter("country"));
+		
+		
+		
+		product_ProductRegistProService registService = new product_ProductRegistProService();
+		
+		String code = registService.registCode("category");
+		
+		 
+		
+		
 			
-		product_ProductRegistProService boardWriteProService = new product_ProductRegistProService();
-		
-		boolean isRegistSuccess = product_ProductRegistProService(productBean)
-		boolean isWriteSuccess = boardWriteProService.registArticle(productBean);
-		System.out.println(isWriteSuccess);
-
-		
 		if(isWriteSuccess = false) {
 			
 			response.setContentType("text/html; charset=UTF-8");
