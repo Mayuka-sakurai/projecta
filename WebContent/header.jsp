@@ -28,34 +28,38 @@
 
 <body>
 	<!-- Offcanvas Menu Begin -->
-	<%request.setCharacterEncoding("UTF-8");
-	response.setCharacterEncoding("UTF-8");%>
+	<%
+		request.setCharacterEncoding("UTF-8");
+	response.setCharacterEncoding("UTF-8");
+	%>
 
-	<div class="offcanvas-menu-overlay"></div>
-	<div class="offcanvas-menu-wrapper">
-		<div class="offcanvas__option">
-			<div class="offcanvas__links">
-				<a href="#">Sign in</a> <a href="#">FAQs</a>
-			</div>
-			<div class="offcanvas__top__hover">
-				<span>Lang<i class="fas fa-angle-down"></i></span>
-				<ul>
-					<li>KOR</li>
-					<li>JPN</li>
+	<div class="offcanvas-menu-overlay">
 
-				</ul>
+		<div class="offcanvas-menu-wrapper">
+			<div class="offcanvas__option">
+				<div class="offcanvas__links">
+					<a href="#">Sign in</a> <a href="#">FAQs</a>
+				</div>
+				<div class="offcanvas__top__hover">
+					<span>Lang<i class="fas fa-angle-down"></i></span>
+					<ul>
+						<li>KOR</li>
+						<li>JPN</li>
+
+					</ul>
+				</div>
 			</div>
-		</div>
-		<div class="offcanvas__nav__option">
-			<a href="#" class="search-switch"><img src="img/icon/search.png"
-				alt="검색버튼" /></a> <a href="#"><img src="img/icon/heart.png"
-				alt="찜하기" /></a> <a href="#"><img src="img/icon/cart.png"
-				alt="장바구니" /> <span>0</span></a>
-			<div class="price">$0.00</div>
-		</div>
-		<div id="mobile-menu-wrap"></div>
-		<div class="offcanvas__text">
-			<p>Free shipping, 30-day return or refund guarantee.</p>
+			<div class="offcanvas__nav__option">
+				<a href="#" class="search-switch"><img src="img/icon/search.png"
+					alt="검색버튼" /></a> <a href="#"><img src="img/icon/heart.png"
+					alt="찜하기" /></a> <a href="#"><img src="img/icon/cart.png"
+					alt="장바구니" /> <span>0</span></a>
+				<div class="price">$0.00</div>
+			</div>
+			<div id="mobile-menu-wrap"></div>
+			<div class="offcanvas__text">
+				<p>123123</p>
+			</div>
 		</div>
 	</div>
 	<!-- Offcanvas Menu End -->
@@ -67,13 +71,14 @@
 				<div class="row">
 					<div class="col-lg-6 col-md-7">
 						<div class="header__top__left">
-							<p>Free shipping, 30-day return or refund guarantee.</p>
+							<p>123456</p>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-5">
 						<div class="header__top__right">
 							<div class="header__top__links">
-								<a href="#">Sign in</a> <a href="#">FAQs</a>
+								<a href="login.jsp">Login</a> 
+								<a href="#">FAQs</a>
 							</div>
 							<div class="header__top__hover">
 								<span>Lang <i class="fa fa-arrow_carrot-down"></i></span>
@@ -124,10 +129,10 @@
 							<li><a href="#">MY PAGE</a>
 								<ul class="dropdown">
 									<li><a href="./about.html">1:1</a></li>
-									<li><a href="./shopping-cart.html">MY CART</a></li>
-									<li><a href="./shopping-cart.html"></a>HISTORY</li>
+									<li><a href="./shopping-cart.html">CART</a></li>
 									<li><a href="#">TRACKING</a></li>
 									<li><a href="#">RETURN</a>
+									<li><a href="#">MY PAGE</a>
 								</ul></li>
 						</ul>
 					</nav>

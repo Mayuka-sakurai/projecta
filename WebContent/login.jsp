@@ -80,6 +80,9 @@ response.setCharacterEncoding("UTF-8");%>
 						<button class="login100-form-btn">
 							Login
 						</button>
+						<button class="login100-form-btn signup_btn">
+							Sign up
+						</button>
 					</div>
 
 				</form>

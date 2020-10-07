@@ -1,9 +1,10 @@
 package com.oreno.VO;
 
+import java.sql.Date;
 
 public class ProductBean {
 	
-private String product_code;
+private int product_code;
 
 private String product_title;
 private String product_artist;
@@ -12,12 +13,12 @@ private String product_year;
 private String product_barcode;
 private String product_image;
 private String product_country;
-private String product_registDate;
+private Date product_registDate;
 
-public String getProduct_code() {
+public int getProduct_code() {
 	return product_code;
 }
-public void setProduct_code(String product_code) {
+public void setProduct_code(int product_code) {
 	this.product_code = product_code;
 }
 
@@ -63,10 +64,10 @@ public String getProduct_country() {
 public void setProduct_country(String product_country) {
 	this.product_country = product_country;
 }
-public String getProduct_registDate() {
+public Date getProduct_registDate() {
 	return product_registDate;
 }
-public void setProduct_registDate(String product_registDate) {
+public void setProduct_registDate(Date product_registDate) {
 	this.product_registDate = product_registDate;
 }
 

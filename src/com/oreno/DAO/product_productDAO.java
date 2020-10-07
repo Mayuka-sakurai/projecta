@@ -3,7 +3,6 @@ package com.oreno.DAO;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -47,39 +46,38 @@ public class product_productDAO {
 
 	// 신규 상품 등록코드 부여중 카테고리 maxCount 
 
-	public int getCategoryCode(String p_category) {
-	
-	int categoryMax = 0;
-		
-	SqlSession session = sqlfactory.openSession();
-	
-	
-	try {
-		// 통일 카테고리로 등록 된 최대 상품 코드 +1  => 신규 카테고리 번호
-		categoryMax = session.selectOne("카테고리max", p_category);
-		
-		if(categoryMax > 0) {
-			categoryMax = categoryMax + 1;
-			
-		}else {
-			categoryMax = 1;
-			
-		}
+	public int getproductCode() {
+		int productCode = 0;
+		int product_num = 0;
+		SqlSession session = sqlfactory.openSession();
 
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	
-	
-	return categoryMax;
+		try {
+			product_num = session.selectOne("productCount");
+
+			if(product_num > 0 ) {
+				product_num = product_num + 1;
+
+			}else {
+				product_num = 1;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return productCode;
 	}
 
 
 	// 신규 상품 등록
 
-	public int registProduct(ProductBean productdetail){
+	public int registProduct(ProductBean productBean){
 		int registResult = 0;
-
+		
+		SqlSession session = sqlfactory.openSession();
+		
+		registResult = session.insert("registProduct", productBean);
+		
+		session.commit();
+		session.close();
 
 		return registResult;
 	}
@@ -89,16 +87,31 @@ public class product_productDAO {
 
 	public int deleteProduct(String product_code) {
 		int deleteResult = 0;
-
+		
+		SqlSession session = sqlfactory.openSession();
+		
+		deleteResult = session.delete("deleteProduct", product_code);
+		
+		session.commit();
+		session.close();
 		return deleteResult;
 	}
 
 
 	// 상품 등록 수정
 
-	public int updateProduct(String product_code) {
+	public int updateProduct(ProductBean productBean) {
 		int updateResult = 0;
 
+		SqlSession session = sqlfactory.openSession();
+		
+		List<ProductBean> updateProduct = new ArrayList<ProductBean>();
+		
+		updateProduct = session.selectList("updateProduct", productBean);
+		
+		session.commit();
+		session.close();
+		
 		return updateResult;
 
 	}
@@ -107,8 +120,11 @@ public class product_productDAO {
 
 	public List<ProductBean> getProductDetail(String produce_code) {
 		List<ProductBean> p_detail = new ArrayList<ProductBean>();
-
-
+		SqlSession session = sqlfactory.openSession();
+		p_detail = session.selectList("product_detail", produce_code);
+		
+		session.commit();
+		session.close();
 
 		return p_detail;
 	}
@@ -143,7 +159,7 @@ public class product_productDAO {
 
 	// article 등록
 
-	public int insertArticle (product_BoardBean boardBean) {
+	public int insertArticle (ProductBean boardBean) {
 
 		SqlSession sqlsession = sqlfactory.openSession();
 
@@ -169,9 +185,9 @@ public class product_productDAO {
 	}
 
 	// 전체 article 가져오기 (List View)
-	public List<product_BoardBean> selectArticleList (int page, int limit) {
+	public List<ProductBean> selectArticleList (int page, int limit) {
 
-		List<product_BoardBean> articleList = new ArrayList<product_BoardBean>();
+		List<ProductBean> articleList = new ArrayList<ProductBean>();
 
 		SqlSession sqlsession = sqlfactory.openSession();
 
@@ -188,11 +204,11 @@ public class product_productDAO {
 
 	// 글 클릭시 확인되는 article 개별
 
-	public List<product_BoardBean> selectArticle (int room_review_no) {
+	public List<ProductBean> selectArticle (int room_review_no) {
 
 
 		SqlSession sqlsession = sqlfactory.openSession();
-		List<product_BoardBean> article = new ArrayList<product_BoardBean>();
+		List<ProductBean> article = new ArrayList<ProductBean>();
 
 		article = sqlsession.selectList("selectArticle",room_review_no);
 		sqlsession.close();
@@ -249,11 +265,11 @@ public class product_productDAO {
 	}
 
 	// 글쓴이의 아이디와 비밀번호 get
-	public List<product_BoardBean> isArticleBoardWriter(int room_review_no) {
+	public List<ProductBean> isArticleBoardWriter(int room_review_no) {
 
 		SqlSession sqlsession = sqlfactory.openSession();
 
-		List<product_BoardBean> wirterInfo = new ArrayList<product_BoardBean>();
+		List<ProductBean> wirterInfo = new ArrayList<ProductBean>();
 
 		wirterInfo = sqlsession.selectList("isArticleBoardWriter", room_review_no);
 
@@ -263,10 +279,10 @@ public class product_productDAO {
 	}
 
 
-	public List<product_BoardBean> updateArticle(product_BoardBean article) {
+	public List<ProductBean> updateArticle(ProductBean article) {
 		SqlSession sqlsession = sqlfactory.openSession();
 
-		List<product_BoardBean> updateArticle = new ArrayList<product_BoardBean>();
+		List<ProductBean> updateArticle = new ArrayList<ProductBean>();
 
 		updateArticle = sqlsession.selectList("updateArticle", article);
 		sqlsession.commit();

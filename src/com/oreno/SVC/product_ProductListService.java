@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.especial.BoardDAO.REVIEW_BoardDAO;
 import com.especial.VO.BoardBean;
+import com.oreno.DAO.product_productDAO;
 
 
 public class product_ProductListService {
@@ -13,7 +14,8 @@ public class product_ProductListService {
 		
 		int listCount = 0;
 
-		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
+		product_productDAO productDAO = product_productDAO.getinstance();
+		
 	
 		listCount = boardDAO.selectListCount();
 		

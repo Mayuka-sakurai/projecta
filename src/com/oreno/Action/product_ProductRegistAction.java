@@ -45,7 +45,7 @@ public class product_ProductRegistAction implements Action {
 		
 		
 		product_ProductRegistProService registService = new product_ProductRegistProService();
-		
+		boolean isRegistSuccess = product_ProductRegistProService.registArticle(productBean);
 		String code = registService.registCode("category");
 		
 		 

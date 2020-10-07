@@ -46,7 +46,7 @@ public class member_MemberDAO {
 	}
 
 
-
+	//유저 로그인
 	public List<UserBean> getLoginInfo(String inputid) {
 		SqlSession session = sqlfactory.openSession();
 		List<UserBean> userInfo = new ArrayList<UserBean>();
@@ -60,4 +60,31 @@ public class member_MemberDAO {
 		return userInfo;
 
 	}
+	//사용자 인증
+	public void userCehck(String id, String password){
+		SqlSession session = sqlfactory.openSession();
+		int auth = -1;
+		try {
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	//id중복확인
+	public void confirmid(String id) {
+		SqlSession session = sqlfactory.openSession();
+		String dbid = null;
+		try {
+			dbid = session.selectOne("idauth", id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	//회원정보 수정
+	public void updateUserInfo() {}
+
+	// 회원탈퇴 
+	public void deleteUser(String id, String password) {}
 }

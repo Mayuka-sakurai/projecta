@@ -15,19 +15,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="logincheck" parameterType="String"
 		resultType="com.oreno.VO.UserBean">
 		select userid, password from oreno.member
-		where userid = #{inputid}
+		where userid =
+		#{inputid}
 	</select>
 	<!-- 회원가입시 사용하는 쿼리문 -->
 	<insert id="signup" parameterType="com.oreno.VO.UserBean">
-	
+		insert into oreno.member
+		values (userid = #{userid}, password = #{password}, address =
+		#{address_main} + " " +#{address_detail}, tel = #{tel}, now())
 	</insert>
 	<!-- 회원 정보 수정시 사용하는 쿼리문 -->
 	<update id="modifyUserInfo">
-	
+		update oreno.member set userid = #{userid}, password = #{password}, address
+		= #{address_main} + " " #{address_detail}, tel = #{tel}
 	</update>
-	
+
 	<!-- 회원 탈퇴시 사용하는 쿼리문 -->
 	<delete id="deleteUser">
-	
+		delete from oreno.member where userid =#{id}
 	</delete>
+
+	<!-- id 중복확인 -->
+	<select id="idauth">
+		select userid from oreno.member where userid = #{id}
+	</select>
 </mapper>

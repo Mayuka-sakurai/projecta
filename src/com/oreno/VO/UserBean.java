@@ -1,13 +1,14 @@
 package com.oreno.VO;
 
+import java.sql.Date;
+
 public class UserBean {
 	private String userid;
 	private String password;
 	private String name;
-	private String address_main;
-	private String address_detail;
+	private String address;
 	private String tel;
-	
+	private Date regDate;
 	public String getUserid() {
 		return userid;
 	}
@@ -26,17 +27,11 @@ public class UserBean {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAddress_main() {
-		return address_main;
+	public String getAddress() {
+		return address;
 	}
-	public void setAddress_main(String address_main) {
-		this.address_main = address_main;
-	}
-	public String getAddress_detail() {
-		return address_detail;
-	}
-	public void setAddress_detail(String address_detail) {
-		this.address_detail = address_detail;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getTel() {
 		return tel;
@@ -44,6 +39,13 @@ public class UserBean {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+
 	
 	
 }

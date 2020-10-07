@@ -61,7 +61,10 @@ public class MemberController extends javax.servlet.http.HttpServlet
 
 
 			}
-
+			//회원가입 이후 메인으로 이동 path 설정
+		}else if(command.equals("/index.mem")) {
+			forward = new ActionForward();
+			forward.setPath("/index.jsp");
 		}
 	}
 

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>Login V14</title>
+<title>Login</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -54,7 +54,7 @@
 						class="txt1 p-b-11"> User id *</span>
 					<div class="wrap-input100 validate-input m-b-12"
 						data-validate="비밀번호는 필수 입력사항입니다.">
-						<span class="btn-show-pass"> <i class="fa fa-eye"></i>
+						<span class="btn-show-pass"> 
 						</span> <input class="input100" type="text" name="userid" required /> <span
 							class="focus-input100"></span>
 					</div>
@@ -62,38 +62,45 @@
 					<span class="txt1 p-b-11"> Password *</span>
 					<div class="wrap-input100 validate-input m-b-12"
 						data-validate="비밀번호는 필수 입력사항입니다.">
-						<span class="btn-show-pass"> <i class="fa fa-eye"></i>
+						<span class="btn-show-pass"> 
 						</span> <input class="input100" type="password" name="password" required />
 						<span class="focus-input100"></span>
 					</div>
 					<span class="txt1 p-b-11"> Password Check *</span>
 					<div class="wrap-input100 validate-input m-b-12"
 						data-validate="비밀번호는 필수 입력사항입니다.">
-						<span class="btn-show-pass"> <i class="fa fa-eye"></i>
+						<span class="btn-show-pass">
 						</span> <input class="input100" type="password" name="password" required />
 						<span class="focus-input100"></span>
 					</div>
 
+					<span class="txt1 p-b-11"> Name *</span>
+					<div class="wrap-input100 validate-input m-b-12"
+						data-validate="이름은 필수 입력사항입니다.">
+						<input class="input100" type="text" name="name" required /> <span
+							class="focus-input100"></span>
+					</div>
+
 					<span class="txt1 p-b-11"> Address *</span>
 					<div class="wrap-input100 validate-input m-b-12"
-						data-validate="비밀번호는 필수 입력사항입니다.">
-						<input class="input100" type="text" name="text"
+						data-validate="주소는 필수 입력사항입니다.">
+						<input class="input100" type="text" name="address_main"
 							placeholder="도/시/군" required /> <span class="focus-input100"></span>
 					</div>
 
 
 					<span class="txt1 p-b-11"> Address Detail * </span>
 					<div class="wrap-input100 validate-input m-b-12"
-						data-validate="비밀번호는 필수 입력사항입니다.">
-						<input class="input100" type="text" name="text"
+						data-validate="주소는 필수 입력사항입니다.">
+						<input class="input100" type="text" name="address_detail"
 							placeholder="동/읍/리/ 기타" required /> <span class="focus-input100"></span>
 					</div>
 
 					<span class="txt1 p-b-11"> TEL * </span>
 					<div class="wrap-input100 validate-input m-b-12"
-						data-validate="비밀번호는 필수 입력사항입니다.">
-						<input class="input100" type="text" name="text"
-							required /> <span class="focus-input100"></span>
+						data-validate="전화번호는 필수 입력사항입니다.">
+						<input class="input100" type="text" name="tel" required /> <span
+							class="focus-input100"></span>
 					</div>
 
 
