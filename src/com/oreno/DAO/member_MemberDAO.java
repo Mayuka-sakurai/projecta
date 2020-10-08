@@ -2,20 +2,16 @@ package com.oreno.DAO;
 
 import java.io.IOException;
 import java.io.Reader;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.oreno.VO.UserBean;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-
-import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import com.mysql.jdbc.Connection;
+import com.oreno.VO.UserBean;
 
 public class member_MemberDAO {
 
@@ -45,7 +41,18 @@ public class member_MemberDAO {
 
 	}
 
+	//신규 멤버 등록
+	public int registMember(UserBean userBean){
+		SqlSession session = sqlfactory.openSession();
 
+		int regcount = session.insert("signup", userBean);
+
+		session.commit();
+		session.close();
+
+		return regcount;
+
+	}
 	//유저 로그인
 	public List<UserBean> getLoginInfo(String inputid) {
 		SqlSession session = sqlfactory.openSession();
@@ -54,9 +61,11 @@ public class member_MemberDAO {
 
 		try {
 			userInfo = session.selectList("loginInfo", inputid);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		session.close();
 		return userInfo;
 
 	}
@@ -78,8 +87,10 @@ public class member_MemberDAO {
 		try {
 			dbid = session.selectOne("idauth", id);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
+
+		session.close();
 	}
 
 	//회원정보 수정
