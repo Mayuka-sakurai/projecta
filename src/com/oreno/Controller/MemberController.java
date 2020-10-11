@@ -10,14 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreno.Action.Action;
 
 import com.oreno.Action.member_LoginAction;
-
-
+import com.oreno.Action.member_RegistAction;
 import com.oreno.VO.ActionForward;
 
 
 @WebServlet("*.mem")
-public class MemberController extends javax.servlet.http.HttpServlet 
-{
+public class MemberController extends javax.servlet.http.HttpServlet {
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 
@@ -47,25 +45,28 @@ public class MemberController extends javax.servlet.http.HttpServlet
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
-
-			if(forward != null){
-
-				if(forward.isRedirect()){
-					response.sendRedirect(forward.getPath());
-				}else{
-					RequestDispatcher dispatcher=request.getRequestDispatcher(forward.getPath());
-					dispatcher.forward(request, response);
-				}
-
-
-
-			}
-			//회원가입 이후 메인으로 이동 path 설정
 		}else if(command.equals("/index.mem")) {
 			forward = new ActionForward();
 			forward.setPath("/index.jsp");
+		}else if(command.equals("/signup.mem")) {
+			action = new member_RegistAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
+		
+		if(forward != null) {
+			if(forward.isRedirect()) {
+				response.sendRedirect(forward.getPath());
+			}else {
+				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
+				dispatcher.forward(request, response);
+			}
+		}
+
+
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 

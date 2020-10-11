@@ -49,6 +49,7 @@
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
 				<form class="login100-form validate-form flex-sb flex-w"
 					method="post" name="singupform" action="signup.mem">
+					
 					<p>ORENO*MARKET 회원가입 페이지 입니다</p>
 					<span class="login100-form-title p-b-32"> Join ORENO </span> <span
 						class="txt1 p-b-11"> User id *</span>
@@ -70,7 +71,7 @@
 					<div class="wrap-input100 validate-input m-b-12"
 						data-validate="비밀번호는 필수 입력사항입니다.">
 						<span class="btn-show-pass">
-						</span> <input class="input100" type="password" name="password" required />
+						</span> <input class="input100" type="password" name="re-password" required />
 						<span class="focus-input100"></span>
 					</div>
 
@@ -111,13 +112,11 @@
 								for="ckb1"> Remember me </label>
 						</div>
 
-						<div>
-							<a href="#" class="txt3"> Forgot Password? </a>
-						</div>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">Login</button>
+						<input type="submit" class="login100-form-btn" value="Sign UP"/>
+						<input type="reset" class="login100-form-btn" value="Reset"/>
 					</div>
 
 				</form>

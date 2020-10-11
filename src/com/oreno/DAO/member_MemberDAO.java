@@ -44,12 +44,14 @@ public class member_MemberDAO {
 	//½Å±Ô ¸â¹ö µî·Ï
 	public int registMember(UserBean userBean){
 		SqlSession session = sqlfactory.openSession();
-
+		boolean newMember = false;
 		int regcount = session.insert("signup", userBean);
 
+		System.out.println("dao µµÂø");
 		session.commit();
 		session.close();
 
+		
 		return regcount;
 
 	}
@@ -66,6 +68,7 @@ public class member_MemberDAO {
 			e.printStackTrace();
 		}
 		session.close();
+		
 		return userInfo;
 
 	}
