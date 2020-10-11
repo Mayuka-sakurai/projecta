@@ -1,9 +1,10 @@
+<%@page import="javax.servlet.jsp.tagext.TryCatchFinally"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<title>Login V14</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -34,6 +35,8 @@
 response.setCharacterEncoding("UTF-8");%>
 
 	<%@include file ="header.jsp" %>
+
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
@@ -46,7 +49,7 @@ response.setCharacterEncoding("UTF-8");%>
 						ID
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "ID는 필수 입력사항입니다.">
-						<input class="input100" type="text" name="userid" placeholder="USER ID">
+						<input class="input100" type="text" name="userid" placeholder="USER ID" >
 						<span class="focus-input100"></span>
 					</div>
 					

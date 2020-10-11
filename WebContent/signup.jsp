@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>Login</title>
+<title>Sign UP</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -49,32 +49,42 @@
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
 				<form class="login100-form validate-form flex-sb flex-w"
 					method="post" name="singupform" action="signup.mem">
-					
+
 					<p>ORENO*MARKET 회원가입 페이지 입니다</p>
 					<span class="login100-form-title p-b-32"> Join ORENO </span> <span
 						class="txt1 p-b-11"> User id *</span>
+							<input type="button" value="중복확인" name="checkID">
 					<div class="wrap-input100 validate-input m-b-12"
-						data-validate="비밀번호는 필수 입력사항입니다.">
-						<span class="btn-show-pass"> 
-						</span> <input class="input100" type="text" name="userid" required /> <span
+						data-validate="아이디는 필수 입력사항입니다." >
+						<span class="btn-show-pass"> </span> <input class="input100"
+							type="text" name="id" autofocus="autofocus"  required /> <span
 							class="focus-input100"></span>
+							<span class="btn-show-pass">
+							</span>
 					</div>
 
 					<span class="txt1 p-b-11"> Password *</span>
 					<div class="wrap-input100 validate-input m-b-12"
 						data-validate="비밀번호는 필수 입력사항입니다.">
-						<span class="btn-show-pass"> 
-						</span> <input class="input100" type="password" name="password" required />
-						<span class="focus-input100"></span>
+						<span class="btn-show-pass"> </span> <input class="input100"
+							type="password" name="password" required /> <span
+							class="focus-input100"></span>
 					</div>
 					<span class="txt1 p-b-11"> Password Check *</span>
 					<div class="wrap-input100 validate-input m-b-12"
 						data-validate="비밀번호는 필수 입력사항입니다.">
-						<span class="btn-show-pass">
-						</span> <input class="input100" type="password" name="re-password" required />
-						<span class="focus-input100"></span>
+						<span class="btn-show-pass"> </span> <input class="input100"
+							type="password" name="re-password" required /> <span
+							class="focus-input100"></span>
 					</div>
-
+					
+					<span class="txt1 p-b-11"> Email *</span>
+					<div class="wrap-input100 validate-input m-b-12"
+						data-validate="이메일은 필수 입력사항입니다.">
+						<input class="input100" type="text" name="email" placeholder ="oreno@oreno.com" required /> <span
+							class="focus-input100"></span>
+					</div>
+					
 					<span class="txt1 p-b-11"> Name *</span>
 					<div class="wrap-input100 validate-input m-b-12"
 						data-validate="이름은 필수 입력사항입니다.">
@@ -115,8 +125,8 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<input type="submit" class="login100-form-btn" value="Sign UP"/>
-						<input type="reset" class="login100-form-btn" value="Reset"/>
+						<input type="submit" class="login100-form-btn" id="signup" value="가입" />
+						<input type="reset" class="login100-form-btn" id="reset" value="돌아가기" />
 					</div>
 
 				</form>
@@ -142,7 +152,7 @@
 	<!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<!--===============================================================================================-->
-	<script src="js/login.js"></script>
+	<script src="js/regist.js"></script>
 
 </body>
 </html>

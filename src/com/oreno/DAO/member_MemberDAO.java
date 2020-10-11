@@ -89,6 +89,7 @@ public class member_MemberDAO {
 		String dbid = null;
 		try {
 			dbid = session.selectOne("idauth", id);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -96,9 +97,53 @@ public class member_MemberDAO {
 		session.close();
 	}
 
-	//회원정보 수정
-	public void updateUserInfo() {}
+	
+	//회원정보 수정시 회원정보 전체 가져오기
+	public void getUserInfo(String id) {
+		SqlSession session = sqlfactory.openSession();
+		
+		try {
+			List<UserBean> userbean = session.selectList("getUserInfo", id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+	}
+	
+	// 추가로 회원정보 확인 후 회원정보 수정
+	public int updateUserInfo(UserBean userBean){
+		
+		SqlSession session = sqlfactory.openSession();
+		List<UserBean> userInfo = new ArrayList<UserBean>();
+		int updateCount = 0;
+		
+		
+		try {
+			updateCount = session.update("updateUserInfo",userBean);
+			
+			session.commit();
+			session.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return updateCount;
+	}
 
 	// 회원탈퇴 
-	public void deleteUser(String id, String password) {}
+	public int deleteUser(String id, String password) {
+		SqlSession session = sqlfactory.openSession();
+		
+		int deleteCount = 0;
+		
+		try {
+			deleteCount = session.delete("deleteUser", id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return deleteCount;
+		
+	}
 }

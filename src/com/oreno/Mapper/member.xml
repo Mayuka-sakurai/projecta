@@ -27,15 +27,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	</insert>
 	<!-- 회원 정보 수정시 사용하는 쿼리문 -->
-	<update id="modifyUserInfo">
+	<update id="updateUserInfo" parameterType="com.oreno.VO.UserBean">
 		update oreno.member set userid = #{userid}, password
 		= #{password}, address
 		= #{address_main} + " " #{address_detail}, tel =
 		#{tel}
 	</update>
+	
+	<!-- 회원정보 수정시 회원정보 가죠오기 -->
+	<select id="getUserInfo" resultType="com.oreno.VO.UserBean">
+		select * from oreno.member where id = #{id}
+	</select>
 
 	<!-- 회원 탈퇴시 사용하는 쿼리문 -->
-	<delete id="deleteUser">
+	<delete id="deleteUser" parameterType="String">
 		delete from oreno.member where userid =#{id}
 	</delete>
 
